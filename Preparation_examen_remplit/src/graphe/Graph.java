@@ -132,7 +132,6 @@ public class Graph {
     Artist fromArtist = artistsbyName.get(from);
     Artist toArtist = artistsbyName.get(to);
 
-    // (Optionnel) garde-fous simples
     if (fromArtist == null || toArtist == null) {
       System.out.println("Artistes introuvables.");
       return;
@@ -184,7 +183,6 @@ public class Graph {
     for (Artist a : path) {
       System.out.println(a.getName());
     }
-
   }
 
   /**

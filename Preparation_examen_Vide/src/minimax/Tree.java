@@ -3,17 +3,17 @@ package minimax;
 // Cette classe repr�sente l'arbre du jeu.
 public class Tree {
 
-	// L'�tat du jeu correspondant � un noeud de l'arbre.
-	private State state;
+  // L'�tat du jeu correspondant � un noeud de l'arbre.
+  private State state;
 
-	// La valeur Minimax dans cet �tat.
-	private Triplet minimaxValue;
+  // La valeur Minimax dans cet �tat.
+  private Triplet minimaxValue;
 
-	// null si le noeud courant est une feuille, le fils de gauche sinon.
-	private Tree leftChild;
+  // null si le noeud courant est une feuille, le fils de gauche sinon.
+  private Tree leftChild;
 
-	// null si le noeud courant est une feuille, le fils de droite sinon.
-	private Tree rightChild;
+  // null si le noeud courant est une feuille, le fils de droite sinon.
+  private Tree rightChild;
 
 	// Ce constructeur construit l'arbre du jeu � partir de l'�tat state.
 	// Notez que les valeurs Minimax seront calcul�e dans la m�thode
@@ -44,38 +44,38 @@ public class Tree {
 	public void computeMinimaxValues() {
 		// TODO
 
-	}
+  }
 
-	// Renvoie true si le noeud est une feuille, false sinon.
-	public boolean isLeaf() {
-		return leftChild == null;
-	}
+  // Renvoie true si le noeud est une feuille, false sinon.
+  public boolean isLeaf() {
+    return leftChild == null;
+  }
 
-	// Getter de la valeur Minimax
-	public Triplet getMinimaxValue() {
-		return minimaxValue;
-	}
+  // Getter de la valeur Minimax
+  public Triplet getMinimaxValue() {
+    return minimaxValue;
+  }
 
-	// Getter de l'�tat courant
-	public State getState() {
-		return state;
-	}
+  // Getter de l'�tat courant
+  public State getState() {
+    return state;
+  }
 
-	// Getter du fils de gauche
-	public Tree getLeftChild() {
-		return leftChild;
-	}
+  // Getter du fils de gauche
+  public Tree getLeftChild() {
+    return leftChild;
+  }
 
-	// Getter du fils de droite
-	public Tree getRightChild() {
-		return rightChild;
-	}
+  // Getter du fils de droite
+  public Tree getRightChild() {
+    return rightChild;
+  }
 
-	public int nbrNode() {
-		int res = 1;
-		if (!isLeaf()) {
-			res += leftChild.nbrNode() + rightChild.nbrNode();
-		}
-		return res;
-	}
+  public int nbrNode() {
+    int res = 1;
+    if (!isLeaf()) {
+      res += leftChild.nbrNode() + rightChild.nbrNode();
+    }
+    return res;
+  }
 }

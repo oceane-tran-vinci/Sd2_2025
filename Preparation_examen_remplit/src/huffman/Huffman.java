@@ -26,6 +26,7 @@ public class Huffman {
 			return left == null && right == null;
 		}
 
+		//lier à buildTree
 		@Override
 		public int compareTo(Node that) {
 			return this.freq - that.freq;
@@ -83,6 +84,9 @@ public class Huffman {
 
 	/***********************************************************
 	 M�thode buildTree
+	 !! ne pas oublier d'ajouter au constructeur:
+	 - implements Comparable<Node>
+	 - compareTo(Node that)
 	 ***********************************************************/
 	// renvoie l'arbre de Huffman obtenu gr�ce � la map des fr�quences des lettres
 	public static Node buildTree(Map<Character, Integer> freq) {

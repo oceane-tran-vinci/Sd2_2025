@@ -1,5 +1,6 @@
 package recursion;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -18,6 +19,7 @@ public class Tree implements Iterable<Tree> {
   // *******************************************************
   // CONSTRUCTEURS
   // *******************************************************
+
   public Tree(int v, Tree[] chd) {
     value = v;
     children = chd;
@@ -34,6 +36,7 @@ public class Tree implements Iterable<Tree> {
   // *******************************************************
   // GETTERS
   // *******************************************************
+
   public int getValue() {
     return value;
   }
@@ -49,9 +52,15 @@ public class Tree implements Iterable<Tree> {
   // *******************************************************
   // ITERATEUR
   // *******************************************************
+
+  @Override
   public Iterator<Tree> iterator() {
     return Arrays.asList(children).iterator();
   }
+
+  // *******************************************************
+  // METHODES UTILITAIRES
+  // *******************************************************
 
   public int nbrChildren() {
     return children.length;
@@ -61,182 +70,342 @@ public class Tree implements Iterable<Tree> {
     return children.length == 0;
   }
 
-  // *******************************************************
-  // METHODES (à ajouter)
-  // *******************************************************
-  /*5 méthodes à prioriser */
+  // =======================================================
+  // 🟢 EXERCICES FACILES
+  // =======================================================
 
-  //Implémentez une méthode qui retourne la valeur maximale présente dans l’arbre.
+  // -------------------------------------------------------
+  // 1) valeurMax()
+  // Implémentez une méthode qui retourne
+  // la valeur maximale présente dans l’arbre.
+  // -------------------------------------------------------
+
   public int valeurMax() {
     return 0;
   }
 
-  //Implémentez une méthode qui retourne un ensemble contenant les valeurs de toutes les feuilles de l’arbre.
-  /**
-   * Retourne un ensemble contenant les valeurs de toutes les feuilles de l’arbre.
-   */
-  public HashSet<Integer> valeursFeuilles() {
-    return null;
-  }
+  // -------------------------------------------------------
+  // 2) sommeDesValeurs()
+  // Implémentez une méthode qui retourne
+  // la somme des valeurs des nœuds de l’arbre.
+  // -------------------------------------------------------
 
-  //Implémentez une méthode qui retourne une map contenant, pour chaque valeur présente dans l’arbre, le nombre de fois où elle apparaît.
-  /**
-   * Retourne une map indiquant combien de fois chaque valeur apparaît dans l’arbre.
-   */
-  public HashMap<Integer, Integer> nbApparitionsParValeur() {
-    return null;
-  }
-
-  //Implémentez une méthode qui retourne la profondeur de la première occurrence de la valeur x. »
-  //(La racine est à profondeur 0. Retourne -1 si la valeur n’est pas trouvée.)
-  public int profondeurValeur(int x) {
-    return 0;
-  }
-
-  // Implémentez une méthode qui retourne le chemin menant à la première occurrence d’un nœud ayant la valeur x.
-  public List<Integer> cheminVers(int x) {
-    return null;
-  }
-
-  /* -----------------------------------
-  * 10 Autres méthodes : entrainement
-  * ------------------------------------ */
-  //Implémentez une méthode qui retourne la somme des valeurs des nœuds de l’arbre
   public int sommeDesValeurs() {
     return 0;
   }
 
-  // Implémentez une méthode qui retourne le nombre de feuilles dans l’arbre.
+  // -------------------------------------------------------
+  // 3) nbFeuilles()
+  // Implémentez une méthode qui retourne
+  // le nombre de feuilles dans l’arbre.
+  // -------------------------------------------------------
+
   public int nbFeuilles() {
     return 0;
   }
 
-  //Compter les occurrences d’une valeur donnée.
+  // -------------------------------------------------------
+  // 4) nbNoeudEgalA(int x)
+  // Compter les occurrences d’une valeur donnée.
+  // -------------------------------------------------------
+
   public int nbNoeudEgalA(int x) {
     return 0;
   }
 
-  //Implémentez une méthode qui retourne true si la valeur x est présente dans l’arbre, false sinon.
-  /**
-   * Renvoie true si la valeur x existe dans l’arbre, false sinon.
-   */
+  // -------------------------------------------------------
+  // 5) hauteur()
+  // Implémentez une méthode qui retourne
+  // la hauteur de l’arbre.
+  // -------------------------------------------------------
+
+  public int hauteur() {
+    return 0;
+  }
+
+  // -------------------------------------------------------
+  // 6) existeValeur(int x)
+  // Implémentez une méthode qui retourne
+  // true si x est présent dans l’arbre.
+  // -------------------------------------------------------
+
   public boolean existeValeur(int x) {
     return false;
   }
 
-  //Implémentez une méthode qui retourne true si tous les enfants d’un nœud ont une valeur inférieure ou égale à leur parent.
-  /**
-   * Renvoie true si la valeur x existe dans l’arbre, false sinon.
-   */
+  // -------------------------------------------------------
+  // 7) tousInferieursOuEgaux()
+  // Implémentez une méthode qui retourne true
+  // si tous les enfants sont <= à leur parent.
+  // -------------------------------------------------------
+
   public boolean tousInferieursOuEgaux() {
     return false;
   }
 
-  //Implémentez une méthode qui retourne le nombre total de niveaux de l’arbre
+  // =======================================================
+  // 🟡 EXERCICES MOYENS
+  // =======================================================
+
+  // -------------------------------------------------------
+  // 8) valeursFeuilles()
+  // Retourne un ensemble contenant
+  // les valeurs de toutes les feuilles.
+  // -------------------------------------------------------
+
+  public HashSet<Integer> valeursFeuilles() {
+    return null;
+  }
+
+  // -------------------------------------------------------
+  // 9) nbApparitionsParValeur()
+  // Retourne une map :
+  // valeur -> nombre d’apparitions.
+  // -------------------------------------------------------
+
+  public HashMap<Integer, Integer> nbApparitionsParValeur() {
+    return null;
+  }
+
+  // -------------------------------------------------------
+  // 10) valeursInternes()
+  // Retourne les valeurs des noeuds internes.
+  // -------------------------------------------------------
+
+  public HashSet<Integer> valeursInternes() {
+    return null;
+  }
+
+  // -------------------------------------------------------
+  // 11) nbNiveaux()
+  // Retourne le nombre total de niveaux.
+  // -------------------------------------------------------
+
   public int nbNiveaux() {
     return 0;
   }
 
-  //Implémentez une méthode qui retourne toutes les valeurs de l’arbre triées dans un TreeSet.
+  // -------------------------------------------------------
+  // 12) valeursTriees()
+  // Retourne toutes les valeurs triées
+  // dans un TreeSet.
+  // -------------------------------------------------------
+
   public TreeSet<Integer> valeursTriees() {
     return null;
   }
 
-  //Vérifier l’uniformité par rapport à la racine.
+  // -------------------------------------------------------
+  // 13) tousLesNoeudsOntLaMemeValeur()
+  // Vérifie si tous les noeuds ont
+  // la même valeur que la racine.
+  // -------------------------------------------------------
+
   public boolean tousLesNoeudsOntLaMemeValeur() {
     return false;
   }
 
+  // =======================================================
+  // 🟠 EXERCICES MODERES
+  // =======================================================
 
-  //Implémentez une méthode qui retourne une map associant chaque valeur de l’arbre à sa profondeur dans l’arbre. Si une valeur apparaît plusieurs fois, on ne garde que la première profondeur.
+  // -------------------------------------------------------
+  // 14) profondeurValeur(int x)
+  // Retourne la profondeur de la première
+  // occurrence de x.
+  // Racine = profondeur 0.
+  // Retourne -1 si absent.
+  // -------------------------------------------------------
+
+  public int profondeurValeur(int x) {
+    return 0;
+  }
+
+  // -------------------------------------------------------
+  // 15) valeursAvecProfondeur()
+  // Retourne une map :
+  // valeur -> profondeur.
+  // Si une valeur apparaît plusieurs fois,
+  // garder uniquement la première profondeur.
+  // -------------------------------------------------------
+
   public HashMap<Integer, Integer> valeursAvecProfondeur() {
     return null;
   }
 
+  // -------------------------------------------------------
+  // 16) nbValeursDifferentes()
+  // Retourne le nombre de valeurs différentes.
+  // -------------------------------------------------------
 
-  //Implémentez une méthode qui retourne le nombre de valeurs différentes dans l’arbre.
   public int nbValeursDifferentes() {
     return 0;
   }
 
+  // -------------------------------------------------------
+  // 17) freresTries()
+  // Retourne true si, pour chaque noeud,
+  // les enfants sont triés dans l’ordre
+  // décroissant de gauche à droite.
+  // -------------------------------------------------------
+
+  public boolean freresTries() {
+    return false;
+  }
+
+  // -------------------------------------------------------
+  // 18) valeursAuNiveau(int k)
+  // Retourne les valeurs des noeuds
+  // se trouvant au niveau k.
+  // La racine est au niveau 0.
+  // -------------------------------------------------------
+
+  public ArrayList<Integer> valeursAuNiveau(int k) {
+    return null;
+  }
+
+  // =======================================================
+  // 🔴 EXERCICES DIFFICILES
+  // =======================================================
+
+  // -------------------------------------------------------
+  // 19) cheminVers(int x)
+  // Retourne le chemin menant
+  // à la première occurrence de x.
+  // -------------------------------------------------------
+
+  public List<Integer> cheminVers(int x) {
+    return null;
+  }
+
+  // -------------------------------------------------------
+  // 20) cheminMaximal()
+  // Retourne le plus long chemin
+  // de la racine vers une feuille.
+  // -------------------------------------------------------
+
+  public List<Integer> cheminMaximal() {
+    return null;
+  }
+
+  // -------------------------------------------------------
+  // BONUS : cheminValeurMaximale()
+  // Retourne le chemin menant
+  // à la valeur maximale.
+  // -------------------------------------------------------
+
+  public List<Integer> cheminValeurMaximale() {
+    return null;
+  }
+
+  // *******************************************************
+  // MAIN TEST
+  // *******************************************************
 
   public static void main(String[] args) {
+
     Tree l6 = new Tree(6);
     Tree l1 = new Tree(1);
-    Tree t9 = new Tree(9, new Tree[] { l6, l1 });
+
+    Tree t9 = new Tree(9,
+        new Tree[]{l6, l1});
+
     Tree l3 = new Tree(3);
     Tree l7 = new Tree(7);
-    Tree t8 = new Tree(8, new Tree[] { l3, l7 });
+
+    Tree t8 = new Tree(8,
+        new Tree[]{l3, l7});
+
     Tree l4 = new Tree(4);
-    Tree t1 = new Tree(1, new Tree[] { t8, t9, l4 });
-    //AJOUTER LES SOUT DES MÉTHODES
-    // -------- valeurMax()
-    System.out.println("valeurMax = " + t1.valeurMax()); // attendu: 9
-    System.out.println("--------------------------");
 
+    Tree t1 = new Tree(1,
+        new Tree[]{t8, t9, l4});
 
-    // -------- valeursFeuilles()
-    // (affichage trié pour stabilité visuelle)
-    System.out.println("valeursFeuilles = " + new java.util.TreeSet<>(t1.valeursFeuilles()));
-    // attendu: [1, 3, 4, 6, 7]
-    System.out.println("--------------------------");
+    // ===================================================
+    // 🟢 FACILES
+    // ===================================================
 
+    System.out.println("===== FACILES =====");
 
-    // -------- nbApparitionsParValeur()
-    System.out.println("nbApparitionsParValeur = " + t1.nbApparitionsParValeur());
-    // attendu (ordre non garanti): {1=2, 3=1, 4=1, 6=1, 7=1, 8=1, 9=1}
-    System.out.println("--------------------------");
+    System.out.println("valeurMax = "
+        + t1.valeurMax());
 
-    // -------- profondeurValeur(int x)
-    System.out.println("profondeurValeur(7) = " + t1.profondeurValeur(7)); // attendu: 2
-    System.out.println("profondeurValeur(1) = " + t1.profondeurValeur(1)); // attendu: 0 (la racine)
-    System.out.println("profondeurValeur(5) = " + t1.profondeurValeur(5)); // attendu: -1 (absent)
-    System.out.println("--------------------------");
+    System.out.println("sommeDesValeurs = "
+        + t1.sommeDesValeurs());
 
-    // -------- cheminVers(int x)
-    System.out.println("cheminVers(7) = " + t1.cheminVers(7));             // attendu: [1, 8, 7]
-    System.out.println("cheminVers(6) = " + t1.cheminVers(6));             // attendu: [1, 9, 6]
-    System.out.println("cheminVers(1) = " + t1.cheminVers(1));             // attendu: [1]
-    System.out.println("cheminVers(5) = " + t1.cheminVers(5));             // attendu: []
-    System.out.println("--------------------------");
+    System.out.println("nbFeuilles = "
+        + t1.nbFeuilles());
 
+    System.out.println("nbNoeudEgalA(1) = "
+        + t1.nbNoeudEgalA(1));
 
-//    /*10 autres méthodes */
-//    System.out.println(" ");
-//    System.out.println(" ");
-//    System.out.println("10 Autres méthodes : entrainement");
-//    System.out.println("--------------------------");
-//    System.out.println("sommeDesValeurs = " + t1.sommeDesValeurs());           // attendu: 39
-//    System.out.println("--------------------------");
-//    System.out.println("nbFeuilles = " + t1.nbFeuilles());                     // attendu: 5
-//    System.out.println("--------------------------");
-//
-//    System.out.println("nbNoeudEgalA(1) = " + t1.nbNoeudEgalA(1));             // attendu: 2
-//    System.out.println("nbNoeudEgalA(5) = " + t1.nbNoeudEgalA(5));             // attendu: 0
-//    System.out.println("--------------------------");
-//
-//    System.out.println("existeValeur(7) = " + t1.existeValeur(7));             // attendu: true
-//    System.out.println("existeValeur(5) = " + t1.existeValeur(5));             // attendu: false
-//    System.out.println("--------------------------");
-//
-//    System.out.println("tousInferieursOuEgaux = " + t1.tousInferieursOuEgaux());// attendu: false
-//    System.out.println("--------------------------");
-//
-//    System.out.println("nbNiveaux = " + t1.nbNiveaux());                       // attendu: 3
-//    System.out.println("--------------------------");
-//
-//    System.out.println("valeursTriees = " + t1.valeursTriees());               // attendu: [1, 3, 4, 6, 7, 8, 9]
-//    System.out.println("--------------------------");
-//
-//    System.out.println("tousLesNoeudsOntLaMemeValeur = " + t1.tousLesNoeudsOntLaMemeValeur());
-//    // attendu: false
-//    System.out.println("--------------------------");
-//
-//    System.out.println("valeursAvecProfondeur = " + t1.valeursAvecProfondeur());
-//    // attendu (ordre non garanti): {1=0, 8=1, 3=2, 7=2, 9=1, 6=2, 4=1}
-//    System.out.println("--------------------------");
-//
-//    System.out.println("nbValeursDifferentes = " + t1.nbValeursDifferentes()); // attendu: 7
-//
+    System.out.println("hauteur = "
+        + t1.hauteur());
+
+    System.out.println("existeValeur(7) = "
+        + t1.existeValeur(7));
+
+    System.out.println("tousInferieursOuEgaux = "
+        + t1.tousInferieursOuEgaux());
+
+    // ===================================================
+    // 🟡 MOYENS
+    // ===================================================
+
+    System.out.println("\n===== MOYENS =====");
+
+    System.out.println("valeursFeuilles = "
+        + t1.valeursFeuilles());
+
+    System.out.println("nbApparitionsParValeur = "
+        + t1.nbApparitionsParValeur());
+
+    System.out.println("valeursInternes = "
+        + t1.valeursInternes());
+
+    System.out.println("nbNiveaux = "
+        + t1.nbNiveaux());
+
+    System.out.println("valeursTriees = "
+        + t1.valeursTriees());
+
+    System.out.println("tousLesNoeudsOntLaMemeValeur = "
+        + t1.tousLesNoeudsOntLaMemeValeur());
+
+    // ===================================================
+    // 🟠 MODERES
+    // ===================================================
+
+    System.out.println("\n===== MODERES =====");
+
+    System.out.println("profondeurValeur(7) = "
+        + t1.profondeurValeur(7));
+
+    System.out.println("valeursAvecProfondeur = "
+        + t1.valeursAvecProfondeur());
+
+    System.out.println("nbValeursDifferentes = "
+        + t1.nbValeursDifferentes());
+
+    System.out.println("freresTries = "
+        + t1.freresTries());
+
+    System.out.println("valeursAuNiveau(2) = "
+        + t1.valeursAuNiveau(2));
+
+    // ===================================================
+    // 🔴 DIFFICILES
+    // ===================================================
+
+    System.out.println("\n===== DIFFICILES =====");
+
+    System.out.println("cheminVers(7) = "
+        + t1.cheminVers(7));
+
+    System.out.println("cheminMaximal = "
+        + t1.cheminMaximal());
+
+    System.out.println("cheminValeurMaximale = "
+        + t1.cheminValeurMaximale());
   }
 }
